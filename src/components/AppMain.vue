@@ -46,6 +46,7 @@ export default {
     </div>
     <h2>Serie TV</h2>
     <div v-for="singleSeries in store.series">
+      <img :src="getImage(singleSeries.poster_path)" />
       <h2>{{ singleSeries.name }}</h2>
       <h5>{{ singleSeries.original_name }}</h5>
       <img :src="getFlag(singleSeries.original_language)" />
