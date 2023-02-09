@@ -10,17 +10,30 @@ export default {
   },
   props: {},
 
-  methods: {},
+  methods: {
+    getFlag(lang) {
+      if (lang == "en") {
+        lang = "uk";
+      } else if (lang == "pt") {
+        lang = "po";
+      }
+
+      const flag = `https://www.worldometers.info//img/flags/small/tn_${lang}-flag.gif`;
+
+      return flag;
+    },
+  },
 };
 </script>
 
 <template>
   <main>
     <div v-for="movie in store.movies">
-      <h1>{{ movie.title }}</h1>
-      <h2>{{ movie.original_title }}</h2>
-      <h3>{{ movie.original_language }}</h3>
-      <h4>{{ movie.vote_average }}</h4>
+      <h2>{{ movie.title }}</h2>
+      <h5>{{ movie.original_title }}</h5>
+      <img :src="getFlag(movie.original_language)" />
+      <p>{{ movie.original_language }}</p>
+      <p>{{ movie.vote_average }}</p>
     </div>
   </main>
 </template>
