@@ -24,6 +24,11 @@ export default {
 
       return flag;
     },
+
+    getImage(img) {
+      let url = "https://image.tmdb.org/t/p/" + "w342" + img;
+      return url;
+    },
   },
 };
 </script>
@@ -32,6 +37,7 @@ export default {
   <main>
     <h2>Film</h2>
     <div v-for="movie in store.movies">
+      <img :src="getImage(movie.poster_path)" />
       <h2>{{ movie.title }}</h2>
       <h5>{{ movie.original_title }}</h5>
       <img :src="getFlag(movie.original_language)" />
