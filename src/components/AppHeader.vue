@@ -1,32 +1,24 @@
 <script>
-import AppSearch from "./AppSearch.vue";
 import { store } from "../store";
 
 export default {
   name: "AppHeader",
-  components: { AppSearch },
+
   data() {
     return {
       store,
     };
   },
 
-  methods: {
-    testMess(parametro, num) {
-      console.log("hey", parametro, num);
-    },
-
-    incrementa() {
-      this.store.counter++;
-    },
-  },
+  methods: {},
 };
 </script>
 
 <template>
-  <AppSearch message="ciao" @eventodalfiglio="testMess" />
-  <h2>{{ store.counter }}</h2>
-  <button @click="incrementa">btn header</button>
+  <div>
+    <input type="text" v-model="store.searchText" placeholder="cerca" />
+    <button @click="$emit('performSearch')">search</button>
+  </div>
 </template>
 
 <style scoped></style>
