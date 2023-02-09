@@ -32,7 +32,8 @@ export default {
 
     calcoloVoto(voto) {
       let votoUno = (voto / 10) * 100;
-      let votoDue = Math.round(votoUno / 100) * 5;
+      let votoDue = (votoUno / 100) * 5;
+      votoDue = Math.round(votoDue);
       return votoDue;
     },
   },
