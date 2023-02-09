@@ -29,6 +29,12 @@ export default {
       let url = "https://image.tmdb.org/t/p/" + "w342" + img;
       return url;
     },
+
+    calcoloVoto(voto) {
+      let votoUno = (voto / 10) * 100;
+      let votoDue = Math.round(votoUno / 100) * 5;
+      return votoDue;
+    },
   },
 };
 </script>
@@ -42,7 +48,7 @@ export default {
       <h5>{{ movie.original_title }}</h5>
       <img :src="getFlag(movie.original_language)" />
       <p>{{ movie.original_language }}</p>
-      <p>{{ movie.vote_average }}</p>
+      <p>{{ calcoloVoto(movie.vote_average) }}</p>
     </div>
     <h2>Serie TV</h2>
     <div v-for="singleSeries in store.series">
@@ -51,7 +57,7 @@ export default {
       <h5>{{ singleSeries.original_name }}</h5>
       <img :src="getFlag(singleSeries.original_language)" />
       <p>{{ singleSeries.original_language }}</p>
-      <p>{{ singleSeries.vote_average }}</p>
+      <p>{{ calcoloVoto(singleSeries.vote_average) }}</p>
     </div>
   </main>
 </template>
