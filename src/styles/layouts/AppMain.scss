@@ -1,0 +1,119 @@
+.allFilms {
+  display: flex;
+}
+
+.allSeries {
+  display: flex;
+}
+
+.imgCopertineFilm,
+.imgCopertineSeries {
+  height: 507px;
+  object-fit: cover;
+}
+
+.allFilms,
+.allSeries {
+  overflow-y: auto;
+  padding-bottom: 65px;
+}
+
+.allFilms::-webkit-scrollbar,
+.allSeries::-webkit-scrollbar {
+  width: 10px;
+}
+
+.allFilms::-webkit-scrollbar-thumb,
+.allSeries::-webkit-thumb {
+  background-color: #303030;
+  border-radius: 10px;
+}
+
+.allFilms::-webkit-scrollbar-track,
+.allSeries::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 5px rgba(102, 102, 102, 0.3);
+}
+
+.filmList,
+.seriesList {
+  background-color: #141414;
+}
+
+.filmList {
+  padding: 100px 0px;
+}
+
+input {
+  padding: 10px;
+  border-radius: 20px;
+  padding-right: 100px;
+  background-color: #ffffffd4;
+}
+
+button {
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.cardFilm,
+.cardSerie {
+  position: relative;
+  cursor: pointer;
+}
+
+.datiFilm,
+.datiSerie {
+  opacity: 0;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 70%;
+  background-image: linear-gradient(
+    to top,
+    #000000,
+    #000000e7,
+    #000000cb,
+    #000000a6,
+    #00000000
+  );
+}
+
+.datiInner {
+  position: absolute;
+  bottom: 0;
+  padding: 30px;
+}
+
+.cardFilm:hover .datiFilm,
+.cardSerie:hover .datiSerie {
+  opacity: 1;
+  transition: all 0.7s;
+}
+
+.genere {
+  padding: 20px 45px;
+
+  @include respond(phone) {
+    padding-top: 90px;
+  }
+}
+
+h2,
+h5 {
+  color: #ffffffd4;
+}
+
+h5 {
+  padding-top: 20px;
+}
+
+.flag {
+  width: 40px;
+  padding-top: 15px;
+}
+
+span {
+  color: yellow;
+  font-size: 20px;
+}

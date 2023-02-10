@@ -1,0 +1,58 @@
+/*
+0 -- 600px:           PHONE
+600 -- 900px:         TABLET PORTRAIN
+900px -- 1200px:      TABLET LANDSCAPE
+1200 -- 1800:         
+1800px                BIG DESKTOP
+*/
+
+// @mixin respond-phone {
+//   @media (max-width: 600px) {
+//     @content;
+//   }
+// }
+
+/*
+$Breakpoint
+-phone
+-tab-port
+-tab-land
+big-desktop 
+*/
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == phoneMicro {
+    @media (max-width: 470px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == phone {
+    @media (max-width: 600px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == tab768 {
+    @media (max-width: 768px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == tabPort {
+    @media (max-width: 900px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == tabLand {
+    @media (max-width: 1200px) {
+      @content;
+    }
+  }
+  @if $breakpoint == bigScreen {
+    @media (min-width: 1800px) {
+      @content;
+    }
+  }
+}
