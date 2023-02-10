@@ -28,6 +28,10 @@ export default {
 </template>
 
 <style scoped>
+::placeholder {
+  color: #141414;
+}
+
 input {
   padding: 10px;
   padding-left: 45px;
@@ -43,6 +47,11 @@ input {
 
 .barraInputButton:hover textarea {
   color: #ffffff;
+}
+
+.barraInputButton:hover ::placeholder {
+  color: rgb(255, 255, 255);
+  transition: all 2s;
 }
 
 textarea:focus,
