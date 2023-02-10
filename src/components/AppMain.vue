@@ -197,6 +197,7 @@ button {
 .cardFilm,
 .cardSerie {
   position: relative;
+  cursor: pointer;
 }
 
 .datiFilm,
