@@ -93,7 +93,7 @@ button {
   justify-content: space-between;
   align-items: center;
   padding: 20px 45px;
-  background-color: #141414;
+  background-color: #141414d1;
 
   position: fixed;
   width: 100%;
