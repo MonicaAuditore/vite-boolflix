@@ -39,7 +39,7 @@ input {
   border-radius: 50px;
   position: relative;
   background-color: transparent;
-  width: 100px;
+  width: 68px;
   transition: all 2s;
 
   border: none;
@@ -73,7 +73,7 @@ input:focus {
 .iconaLente {
   width: 23px;
   position: absolute;
-  right: 237px;
+  right: 200px;
   top: 33px;
   transition: all 2s;
 }
@@ -81,6 +81,11 @@ input:focus {
 button {
   padding: 15px 40px;
   border-radius: 50px;
+  cursor: pointer;
+
+  background-color: #f0f8ff00;
+  border: 0.5px solid white;
+  color: white;
 }
 
 .containerHeader {
