@@ -42,39 +42,62 @@ export default {
 
 <template>
   <main>
-    <h2>Film</h2>
-
-    <div v-for="movie in store.movies">
-      <img :src="getImage(movie.poster_path)" />
-      <h2>{{ movie.title }}</h2>
-      <h5>{{ movie.original_title }}</h5>
-      <img :src="getFlag(movie.original_language)" />
-      <!-- <p>{{ movie.original_language }}</p> -->
-      <div>
-        <span v-for="votoSingolo in calcoloVoto(movie.vote_average)"> ★ </span>
-        <span v-for="votoSingolo in 5 - calcoloVoto(movie.vote_average)">
-          ☆
-        </span>
+    <div class="filmList">
+      <div class="titleFilms">
+        <h2>Film</h2>
+      </div>
+      <div class="allFilms">
+        <div v-for="movie in store.movies">
+          <img :src="getImage(movie.poster_path)" />
+          <h2>{{ movie.title }}</h2>
+          <h5>{{ movie.original_title }}</h5>
+          <img :src="getFlag(movie.original_language)" />
+          <!-- <p>{{ movie.original_language }}</p> -->
+          <div>
+            <span v-for="votoSingolo in calcoloVoto(movie.vote_average)">
+              ★
+            </span>
+            <span v-for="votoSingolo in 5 - calcoloVoto(movie.vote_average)">
+              ☆
+            </span>
+          </div>
+        </div>
       </div>
     </div>
 
-    <h2>Serie TV</h2>
-    <div v-for="singleSeries in store.series">
-      <img :src="getImage(singleSeries.poster_path)" />
-      <h2>{{ singleSeries.name }}</h2>
-      <h5>{{ singleSeries.original_name }}</h5>
-      <img :src="getFlag(singleSeries.original_language)" />
-      <!-- <p>{{ singleSeries.original_language }}</p> -->
-      <div>
-        <span v-for="votoSingolo in calcoloVoto(singleSeries.vote_average)">
-          ★
-        </span>
-        <span v-for="votoSingolo in 5 - calcoloVoto(singleSeries.vote_average)">
-          ☆
-        </span>
+    <div class="seriesList">
+      <div class="seriesTitle">
+        <h2>Serie TV</h2>
+      </div>
+      <div class="allSeries">
+        <div v-for="singleSeries in store.series">
+          <img :src="getImage(singleSeries.poster_path)" />
+          <h2>{{ singleSeries.name }}</h2>
+          <h5>{{ singleSeries.original_name }}</h5>
+          <img :src="getFlag(singleSeries.original_language)" />
+          <!-- <p>{{ singleSeries.original_language }}</p> -->
+          <div>
+            <span v-for="votoSingolo in calcoloVoto(singleSeries.vote_average)">
+              ★
+            </span>
+            <span
+              v-for="votoSingolo in 5 - calcoloVoto(singleSeries.vote_average)"
+            >
+              ☆
+            </span>
+          </div>
+        </div>
       </div>
     </div>
   </main>
 </template>
 
-<style scoped></style>
+<style scoped>
+.allFilms {
+  display: flex;
+}
+
+.allSeries {
+  display: flex;
+}
+</style>
