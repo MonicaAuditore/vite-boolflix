@@ -21,20 +21,52 @@ export default {
     </div>
     <div class="barraInputButton">
       <input type="text" v-model="store.searchText" placeholder="cerca" />
-      <button @click="$emit('performSearch')">Cerca</button>
+      <img class="iconaLente" src="../img/49116.png" />
+      <button @click="$emit('performSearch')">Invia</button>
     </div>
   </div>
 </template>
 
 <style scoped>
-.barraInputButton input {
-  margin-right: 20px;
-}
-
 input {
   padding: 10px;
-  padding-right: 60px;
+  padding-left: 45px;
+  margin-right: 20px;
   border-radius: 50px;
+  position: relative;
+  background-color: transparent;
+  width: 100px;
+  transition: all 2s;
+
+  border: none;
+}
+
+.barraInputButton:hover textarea {
+  color: #ffffff;
+}
+
+textarea:focus,
+input:focus {
+  color: #ffffff;
+}
+
+.barraInputButton:hover input {
+  width: 250px;
+  transition: all 2s;
+  border: 1px solid #727272;
+}
+
+.barraInputButton:hover .iconaLente {
+  right: 387px;
+  transition: all 2s;
+}
+
+.iconaLente {
+  width: 23px;
+  position: absolute;
+  right: 237px;
+  top: 33px;
+  transition: all 2s;
 }
 
 button {
@@ -46,7 +78,7 @@ button {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
+  padding: 20px 45px;
   background-color: #141414;
 
   position: fixed;

@@ -108,6 +108,7 @@ export default {
                 <!-- <p>{{ singleSeries.original_language }}</p> -->
                 <div>
                   <span
+                    class="star"
                     v-for="votoSingolo in calcoloVoto(
                       singleSeries.vote_average
                     )"
@@ -230,7 +231,7 @@ button {
 }
 
 .genere {
-  padding: 28px;
+  padding: 20px 45px;
 }
 
 h2,
@@ -245,5 +246,10 @@ h5 {
 .flag {
   width: 40px;
   padding-top: 15px;
+}
+
+span {
+  color: yellow;
+  font-size: 20px;
 }
 </style>
