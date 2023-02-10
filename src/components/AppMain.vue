@@ -62,19 +62,21 @@ export default {
               />
             </div>
             <div class="datiFilm">
-              <h2>{{ movie.title }}</h2>
-              <h5>{{ movie.original_title }}</h5>
-              <img class="flag" :src="getFlag(movie.original_language)" />
-              <!-- <p>{{ movie.original_language }}</p> -->
-              <div>
-                <span v-for="votoSingolo in calcoloVoto(movie.vote_average)">
-                  ★
-                </span>
-                <span
-                  v-for="votoSingolo in 5 - calcoloVoto(movie.vote_average)"
-                >
-                  ☆
-                </span>
+              <div class="datiInner">
+                <h2>{{ movie.title }}</h2>
+                <h5>{{ movie.original_title }}</h5>
+                <img class="flag" :src="getFlag(movie.original_language)" />
+                <!-- <p>{{ movie.original_language }}</p> -->
+                <div>
+                  <span v-for="votoSingolo in calcoloVoto(movie.vote_average)">
+                    ★
+                  </span>
+                  <span
+                    v-for="votoSingolo in 5 - calcoloVoto(movie.vote_average)"
+                  >
+                    ☆
+                  </span>
+                </div>
               </div>
             </div>
           </div>
@@ -96,25 +98,29 @@ export default {
               />
             </div>
             <div class="datiSerie">
-              <h2>{{ singleSeries.name }}</h2>
-              <h5>{{ singleSeries.original_name }}</h5>
-              <img
-                class="flag"
-                :src="getFlag(singleSeries.original_language)"
-              />
-              <!-- <p>{{ singleSeries.original_language }}</p> -->
-              <div>
-                <span
-                  v-for="votoSingolo in calcoloVoto(singleSeries.vote_average)"
-                >
-                  ★
-                </span>
-                <span
-                  v-for="votoSingolo in 5 -
-                  calcoloVoto(singleSeries.vote_average)"
-                >
-                  ☆
-                </span>
+              <div class="datiInner">
+                <h2>{{ singleSeries.name }}</h2>
+                <h5>{{ singleSeries.original_name }}</h5>
+                <img
+                  class="flag"
+                  :src="getFlag(singleSeries.original_language)"
+                />
+                <!-- <p>{{ singleSeries.original_language }}</p> -->
+                <div>
+                  <span
+                    v-for="votoSingolo in calcoloVoto(
+                      singleSeries.vote_average
+                    )"
+                  >
+                    ★
+                  </span>
+                  <span
+                    v-for="votoSingolo in 5 -
+                    calcoloVoto(singleSeries.vote_average)"
+                  >
+                    ☆
+                  </span>
+                </div>
               </div>
             </div>
           </div>
@@ -197,9 +203,9 @@ button {
   opacity: 0;
   position: absolute;
   bottom: 0;
-  left: 0;
-  padding: 30px;
+
   width: 100%;
+  height: 70%;
 
   background-image: linear-gradient(
     to top,
@@ -209,6 +215,12 @@ button {
     #000000a6,
     #00000000
   );
+}
+
+.datiInner {
+  position: absolute;
+  bottom: 0;
+  padding: 30px;
 }
 
 .cardFilm:hover .datiFilm,
