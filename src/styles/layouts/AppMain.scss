@@ -97,6 +97,10 @@ button {
   @include respond(phone) {
     padding-top: 90px;
   }
+
+  @include respond(phoneMicro) {
+    padding-top: 145px;
+  }
 }
 
 h2,

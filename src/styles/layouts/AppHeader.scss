@@ -26,6 +26,16 @@
 
 ::placeholder {
   color: #141414;
+
+  @include respond(phoneMicro) {
+    color: #ffffff;
+  }
+}
+
+.barraInputButton {
+  @include respond(phoneMicro) {
+    text-align: center;
+  }
 }
 
 .barraInputButton:hover textarea {
@@ -46,6 +56,10 @@ input:focus {
   width: 250px;
   transition: all 2s;
   border: 1px solid #727272;
+
+  @include respond(phoneMicro) {
+    width: 300px;
+  }
 }
 
 .barraInputButton:hover .iconaLente {
@@ -54,6 +68,10 @@ input:focus {
 
   @include respond(phone) {
     right: 453px;
+  }
+
+  @include respond(phoneMicro) {
+    right: 390px;
   }
 }
 
@@ -67,6 +85,11 @@ input:focus {
   @include respond(phone) {
     right: 372px;
     top: 106px;
+  }
+
+  @include respond(phoneMicro) {
+    // right: 272px;
+    display: none;
   }
 }
 
@@ -89,4 +112,12 @@ input:focus {
   transition: all 2s;
   border: none;
   position: relative;
+
+  @include respond(phoneMicro) {
+    padding: 20px;
+    border: 1px solid #fff;
+    width: 250px;
+    margin-bottom: 20px;
+    margin-right: 0px;
+  }
 }
