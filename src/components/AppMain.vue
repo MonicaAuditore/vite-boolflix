@@ -77,6 +77,7 @@ export default {
                     ☆
                   </span>
                 </div>
+                <p>{{ movie.overview }}</p>
               </div>
             </div>
           </div>
@@ -122,6 +123,7 @@ export default {
                     ☆
                   </span>
                 </div>
+                <p>{{ singleSeries.overview }}</p>
               </div>
             </div>
           </div>

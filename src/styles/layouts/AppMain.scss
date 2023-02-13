@@ -69,7 +69,7 @@ button {
   position: absolute;
   bottom: 0;
   width: 100%;
-  height: 70%;
+  height: 100%;
   background-image: linear-gradient(
     to top,
     #000000,
@@ -90,6 +90,7 @@ button {
 .cardSerie:hover .datiSerie {
   opacity: 1;
   transition: all 0.7s;
+  overflow: hidden;
 }
 
 .genere {
@@ -105,7 +106,8 @@ button {
 }
 
 h2,
-h5 {
+h5,
+p {
   color: #ffffffd4;
 }
 
@@ -121,4 +123,9 @@ h5 {
 span {
   color: yellow;
   font-size: 20px;
+}
+
+p {
+  overflow-y: scroll;
+  height: 170px;
 }
