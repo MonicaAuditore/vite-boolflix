@@ -12,10 +12,12 @@ export default {
   data() {
     return {
       store,
+      defaultSearchQuery: "adventure",
     };
   },
 
   methods: {
+    // Questo metodo viene chiamato quando si verifica l'evento di ricerca dal componente AppHeader, effettua 2 richieste una per film e una per serie
     handleSearchEvent() {
       axios
         .get("https://api.themoviedb.org/3/search/" + "movie", {
@@ -27,7 +29,7 @@ export default {
         })
         .then((response) => {
           console.log(response);
-
+          // Salva i film nella proprietà "movies" dell'oggetto store con i dati della risposta
           this.store.movies = response.data.results;
         });
 
@@ -41,10 +43,14 @@ export default {
         })
         .then((response) => {
           console.log(response);
-
+          // Salva le serie TV nella proprietà "series" dell'oggetto store con i dati della risposta
           this.store.series = response.data.results;
         });
     },
+  },
+  created() {
+    this.store.searchText = this.defaultSearchQuery;
+    this.handleSearchEvent();
   },
 };
 </script>
